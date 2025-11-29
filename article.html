@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <title>सत्यजय टाइम्स - खबर</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- Header (same markup as index) -->
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <div class="logo-block">
+          <img src="logo.jpg" alt="Satyajay Times logo" class="logo-img" />
+          <div class="brand-text">
+            <h1>सत्यजय टाइम्स</h1>
+            <p>Satyajay Times</p>
+            <span class="tagline"><i class="fa-solid fa-feather"></i> हिंदी दैनिक समाचार पत्र</span>
+          </div>
+        </div>
+
+        <div class="meta-strip">
+          <div class="meta-pill date"><span class="label">तारीख</span> <span class="value" id="date-now">--</span></div>
+          <div class="meta-pill time"><span class="label">समय</span> <span class="value" id="time-now">--:--</span></div>
+          <div class="meta-pill temperature"><span class="label">तापमान</span> <span class="value" id="temp-value">--°C</span></div>
+          <div class="meta-pill aqi"><span class="label">AQI</span> <span class="value" id="aqi-value">--</span></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navbar (same as index) -->
+    <div class="nav-wrapper">
+      <nav class="site-nav">
+        <div class="container">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="index.html">होम</a></li>
+            <li class="nav-item"><a href="#faridabad">फरीदाबाद</a></li>
+            <li class="nav-item"><a href="#haryana">हरियाणा</a></li>
+            <li class="nav-item"><a href="#cricket">क्रिकेट</a></li>
+            <li class="nav-item"><a href="#entertainment">मनोरंजन</a></li>
+            <li class="nav-item"><a href="#national">राष्ट्रीय</a></li>
+            <li class="nav-item"><a href="#international">अंतरराष्ट्रीय</a></li>
+            <li class="nav-item"><a href="#about">हमारे बारे में</a></li>
+            <li class="nav-item"><a href="#contact">संपर्क करें</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- ARTICLE CONTENT -->
+    <main class="main-content">
+      <div class="container">
+        <article class="article-card">
+          <div class="article-meta">
+            <div class="article-category" id="article-category"></div>
+            <h1 id="article-title">...loading...</h1>
+            <div class="article-submeta">
+              <span id="article-date"></span> · <span id="article-time"></span>
+            </div>
+          </div>
+
+          <div class="article-image" id="article-image-wrap">
+            <!-- image inserted by JS -->
+          </div>
+
+          <div class="article-body" id="article-body">
+            <!-- full article inserted by JS -->
+          </div>
+
+          <div id="article-pdf" style="margin-top:12px;"></div>
+        </article>
+
+        <p style="margin-top:20px;"><a href="index.html">← वापस होम पर जाएं</a></p>
+      </div>
+    </main>
+
+    <!-- Footer (same as index) -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-card">
+          <div class="footer-left">
+            <h3>हमें फॉलो करें</h3>
+            <p>सोशल मीडिया पर सत्यजय टाइम्स से जुड़े रहें और तुरंत अपडेट पाएं।</p>
+          </div>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-bottom">&copy; <span id="year-now"></span> सत्यजय टाइम्स · सर्वाधिकार सुरक्षित।</div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- tiny script to render article -->
+  <script>
+    // parse query string to get ?slug=...
+    function getQueryParam(name) {
+      const url = new URL(window.location.href);
+      return url.searchParams.get(name);
+    }
+
+    async function loadArticle() {
+      const slug = getQueryParam('slug');
+      if (!slug) {
+        document.getElementById('article-title').textContent = "लेख नहीं मिला";
+        document.getElementById('article-body').innerHTML = "<p>लेख का पता नहीं चला।</p>";
+        return;
+      }
+
+      try {
+        const res = await fetch('news-data.json', {cache: "no-store"});
+        if (!res.ok) throw new Error('news-data.json missing');
+        const data = await res.json();
+        const article = data.find(a => a.slug === slug);
+        if (!article) {
+          document.getElementById('article-title').textContent = "लेख नहीं मिला";
+          document.getElementById('article-body').innerHTML = "<p>आप जिस लेख पर क्लिक कर रहे हैं वह उपलब्ध नहीं है।</p>";
+          return;
+        }
+
+        document.getElementById('article-title').textContent = article.title;
+        document.getElementById('article-category').textContent = article.category;
+        // date/time
+        const dt = new Date(article.date);
+        document.getElementById('article-date').textContent = dt.toLocaleDateString('hi-IN', { day:'2-digit', month:'long', year:'numeric'});
+        document.getElementById('article-time').textContent = dt.toLocaleTimeString('hi-IN', { hour: '2-digit', minute: '2-digit', hour12:false });
+
+        // image
+        const imgWrap = document.getElementById('article-image-wrap');
+        imgWrap.innerHTML = '';
+        if (article.image) {
+          const img = document.createElement('img');
+          img.src = article.image;
+          img.alt = article.title;
+          img.style.width = '100%';
+          img.style.borderRadius = '12px';
+          imgWrap.appendChild(img);
+        }
+
+        // body (article.content is HTML string or markdown converted to HTML)
+        // We'll assume content is safe HTML (we control data files). If content is markdown, you can convert later.
+        document.getElementById('article-body').innerHTML = article.content;
+
+        // PDF if present
+        const pdfWrap = document.getElementById('article-pdf');
+        pdfWrap.innerHTML = '';
+        if (article.pdf) {
+          pdfWrap.innerHTML = '<p><strong>ई-पेपर / पीडीएफ:</strong></p><iframe src="'+ article.pdf +'" class="pdf-frame" title="PDF"></iframe><p><a href="'+ article.pdf +'" target="_blank" class="btn-primary">PDF नई टैब में खोलें</a></p>';
+        }
+
+      } catch (err) {
+        console.error(err);
+        document.getElementById('article-title').textContent = "त्रुटि";
+        document.getElementById('article-body').innerHTML = "<p>लेख लोड करते समय समस्या आई।</p>";
+      }
+    }
+
+    // small init for date/time in header/footer (reuse same logic as script.js if present)
+    (function initHeaderDateTime() {
+      const now = new Date();
+      const dateEl = document.getElementById('date-now');
+      const timeEl = document.getElementById('time-now');
+      if (dateEl) dateEl.textContent = now.toLocaleDateString('hi-IN', { day:'2-digit', month:'long', year:'numeric' });
+      if (timeEl) timeEl.textContent = now.toLocaleTimeString('hi-IN', { hour: '2-digit', minute: '2-digit', hour12:false });
+      const yearEl = document.getElementById('year-now');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    })();
+
+    loadArticle();
+  </script>
+</body>
+</html>

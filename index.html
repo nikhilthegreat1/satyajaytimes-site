@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <title>सत्यजय टाइम्स | Satyajay Times - हिंदी दैनिक</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Hindi friendly font -->
+  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;600&display=swap" rel="stylesheet" />
+  <!-- Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- HEADER -->
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <div class="logo-block">
+          <img src="logo.jpg" alt="Satyajay Times logo" class="logo-img" />
+          <div class="brand-text">
+            <h1>सत्यजय टाइम्स</h1>
+            <p>Satyajay Times</p>
+            <span class="tagline">
+              <i class="fa-solid fa-feather"></i>
+              हिंदी दैनिक समाचार पत्र
+            </span>
+          </div>
+        </div>
+
+        <div class="meta-strip">
+          <div class="meta-pill date">
+            <span class="label">तारीख</span>
+            <span class="value" id="date-now">--</span>
+          </div>
+          <div class="meta-pill time">
+            <span class="label">समय</span>
+            <span class="value" id="time-now">--:--</span>
+          </div>
+          <div class="meta-pill temperature">
+            <span class="label">तापमान</span>
+            <span class="value" id="temp-value">--°C</span>
+          </div>
+          <div class="meta-pill aqi">
+            <span class="label">AQI</span>
+            <span class="value" id="aqi-value">--</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- NAVBAR -->
+    <div class="nav-wrapper">
+      <nav class="site-nav">
+        <div class="container">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="#top" class="active">होम</a></li>
+            <li class="nav-item"><a href="#faridabad">फरीदाबाद</a></li>
+            <li class="nav-item"><a href="#haryana">हरियाणा</a></li>
+            <li class="nav-item"><a href="#cricket">क्रिकेट</a></li>
+            <li class="nav-item"><a href="#entertainment">मनोरंजन</a></li>
+            <li class="nav-item"><a href="#national">राष्ट्रीय</a></li>
+            <li class="nav-item"><a href="#international">अंतरराष्ट्रीय</a></li>
+            <li class="nav-item"><a href="#about">हमारे बारे में</a></li>
+            <li class="nav-item"><a href="#contact">संपर्क करें</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <div class="container">
+
+        <!-- BREAKING NEWS -->
+        <section class="breaking-section">
+          <div class="breaking-bar">
+            <div class="breaking-label">
+              <i class="fa-solid fa-bolt"></i>
+              ब्रेकिंग न्यूज़
+            </div>
+            <div class="breaking-ticker">
+              <div class="ticker-track">
+                <div class="ticker-item">
+                  <time>09:10 PM</time> फरीदाबाद: मुख्य बाजार में ट्रैफिक व्यवस्था के लिए नया प्लान लागू
+                </div>
+                <div class="ticker-item">
+                  <time>08:45 PM</time> हरियाणा कैबिनेट की बैठक में शिक्षा और स्वास्थ्य से जुड़े महत्वपूर्ण फैसले
+                </div>
+                <div class="ticker-item">
+                  <time>08:15 PM</time> भारत बनाम ऑस्ट्रेलिया: सीरीज़ के तीसरे मैच में भारत की रोमांचक जीत
+                </div>
+                <div class="ticker-item">
+                  <time>07:50 PM</time> बॉलीवुड अभिनेता की नई फिल्म ने पहले दिन ही बॉक्स ऑफिस पर रिकॉर्ड बनाया
+                </div>
+                <div class="ticker-item">
+                  <time>07:20 PM</time> राष्ट्रीय स्तर पर नई आर्थिक नीति पर विशेषज्ञों की राय
+                </div>
+                <div class="ticker-item">
+                  <time>06:55 PM</time> अंतरराष्ट्रीय मंच पर भारत की कूटनीतिक सफलता की नई कहानी
+                </div>
+
+                <!-- repeat for smooth scroll -->
+                <div class="ticker-item">
+                  <time>09:10 PM</time> फरीदाबाद: मुख्य बाजार में ट्रैफिक व्यवस्था के लिए नया प्लान लागू
+                </div>
+                <div class="ticker-item">
+                  <time>08:45 PM</time> हरियाणा कैबिनेट की बैठक में शिक्षा और स्वास्थ्य से जुड़े महत्वपूर्ण फैसले
+                </div>
+                <div class="ticker-item">
+                  <time>08:15 PM</time> भारत बनाम ऑस्ट्रेलिया: सीरीज़ के तीसरे मैच में भारत की रोमांचक जीत
+                </div>
+                <div class="ticker-item">
+                  <time>07:50 PM</time> बॉलीवुड अभिनेता की नई फिल्म ने पहले दिन ही बॉक्स ऑफिस पर रिकॉर्ड बनाया
+                </div>
+                <div class="ticker-item">
+                  <time>07:20 PM</time> राष्ट्रीय स्तर पर नई आर्थिक नीति पर विशेषज्ञों की राय
+                </div>
+                <div class="ticker-item">
+                  <time>06:55 PM</time> अंतरराष्ट्रीय मंच पर भारत की कूटनीतिक सफलता की नई कहानी
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- LATEST NEWS GRID WITH IMAGES -->
+        <section aria-label="Latest news" class="section-block">
+          <div class="section-header">
+            <h2>ताज़ा खबरें</h2>
+            <span class="meta">आज प्रकाशित प्रमुख समाचार</span>
+          </div>
+
+          <div class="news-grid">
+            <!-- Card 1 -->
+            <a class="news-link" href="article.html?slug=faridabad-road-2025-11-28" style="text-decoration:none;color:inherit;">
+              <article class="news-card" id="faridabad">
+                <figure class="news-image">
+                  <img src="news1.jpg" alt="फरीदाबाद न्यूज़ इमेज">
+                </figure>
+                <div class="news-content">
+                  <div class="news-category">फरीदाबाद</div>
+                  <h3 class="news-title">
+                    फरीदाबाद के सेक्टर में नई सड़क और स्ट्रीट लाइट परियोजना को मिली मंज़ूरी
+                  </h3>
+                  <p class="news-summary">
+                    नगर निगम की बैठक में सफाई, सड़क और जल निकासी जैसी योजनाओं पर विस्तार से चर्चा...
+                  </p>
+                  <p class="news-meta">
+                    <span>प्रकाशित: 28 नवम्बर 2025</span> ·
+                    <span class="time">08:45 PM</span>
+                  </p>
+                </div>
+              </article>
+            </a>
+
+            <!-- Card 2 -->
+            <a class="news-link" href="article.html?slug=haryana-farm-insurance-2025-11-28" style="text-decoration:none;color:inherit;">
+              <article class="news-card" id="haryana">
+                <figure class="news-image">
+                  <img src="news2.jpg" alt="हरियाणा न्यूज़ इमेज">
+                </figure>
+                <div class="news-content">
+                  <div class="news-category">हरियाणा</div>
+                  <h3 class="news-title">
+                    हरियाणा सरकार ने किसानों के लिए नई फसल बीमा योजना की घोषणा की
+                  </h3>
+                  <p class="news-summary">
+                    योजना के तहत छोटे और सीमांत किसानों को प्रीमियम पर विशेष सब्सिडी देने का प्रावधान...
+                  </p>
+                  <p class="news-meta">
+                    <span>प्रकाशित: 28 नवम्बर 2025</span> ·
+                    <span class="time">07:30 PM</span>
+                  </p>
+                </div>
+              </article>
+            </a>
+
+            <!-- Card 3 -->
+            <a class="news-link" href="article.html?slug=india-cricket-win-2025-11-28" style="text-decoration:none;color:inherit;">
+              <article class="news-card" id="cricket">
+                <figure class="news-image">
+                  <img src="news3.jpg" alt="क्रिकेट न्यूज़ इमेज">
+                </figure>
+                <div class="news-content">
+                  <div class="news-category">क्रिकेट</div>
+                  <h3 class="news-title">
+                    टीम इंडिया की शानदार जीत, कप्तान की सूझबूझ भरी पारी की तारीफ
+                  </h3>
+                  <p class="news-summary">
+                    अंतिम ओवर तक रोमांच से भरे मैच में भारतीय गेंदबाज़ों ने बेहतरीन प्रदर्शन किया...
+                  </p>
+                  <p class="news-meta">
+                    <span>प्रकाशित: 28 नवम्बर 2025</span> ·
+                    <span class="time">06:55 PM</span>
+                  </p>
+                </div>
+              </article>
+            </a>
+
+            <!-- Card 4 -->
+            <a class="news-link" href="article.html?slug=entertainment-web-series-2025-11-28" style="text-decoration:none;color:inherit;">
+              <article class="news-card" id="entertainment">
+                <figure class="news-image">
+                  <img src="news4.jpg" alt="मनोरंजन न्यूज़ इमेज">
+                </figure>
+                <div class="news-content">
+                  <div class="news-category">मनोरंजन</div>
+                  <h3 class="news-title">
+                    नए वेब सीरीज़ ने युवाओं के बीच बनाई अलग पहचान, पहले वीकेंड पर ही रिकॉर्ड व्यूज़
+                  </h3>
+                  <p class="news-summary">
+                    कहानी की सादगी और दमदार अभिनय की वजह से शो को सोशल मीडिया पर खूब सराहना मिल रही है...
+                  </p>
+                  <p class="news-meta">
+                    <span>प्रकाशित: 28 नवम्बर 2025</span> ·
+                    <span class="time">05:40 PM</span>
+                  </p>
+                </div>
+              </article>
+            </a>
+
+            <!-- Card 5 -->
+            <a class="news-link" href="article.html?slug=parliament-bills-2025-11-28" style="text-decoration:none;color:inherit;">
+              <article class="news-card" id="national">
+                <figure class="news-image">
+                  <img src="news5.jpg" alt="राष्ट्रीय न्यूज़ इमेज">
+                </figure>
+                <div class="news-content">
+                  <div class="news-category">राष्ट्रीय</div>
+                  <h3 class="news-title">
+                    संसद के शीत कालीन सत्र में कई अहम विधेयक पेश होने की संभावना
+                  </h3>
+                  <p class="news-summary">
+                    सरकार ने संकेत दिए हैं कि इस सत्र में अर्थव्यवस्था और रोजगार से जुड़े मुद्दों पर गंभीर चर्चा होगी...
+                  </p>
+                  <p class="news-meta">
+                    <span>प्रकाशित: 28 नवम्बर 2025</span> ·
+                    <span class="time">04:20 PM</span>
+                  </p>
+                </div>
+              </article>
+            </a>
+
+            <!-- Card 6 -->
+            <a class="news-link" href="article.html?slug=climate-consensus-2025-11-28" style="text-decoration:none;color:inherit;">
+              <article class="news-card" id="international">
+                <figure class="news-image">
+                  <img src="news6.jpg" alt="अंतरराष्ट्रीय न्यूज़ इमेज">
+                </figure>
+                <div class="news-content">
+                  <div class="news-category">अंतरराष्ट्रीय</div>
+                  <h3 class="news-title">
+                    वैश्विक मंच पर जलवायु परिवर्तन को लेकर देशों के बीच नई सहमति
+                  </h3>
+                  <p class="news-summary">
+                    सम्मेलन में विकासशील देशों की चिंताओं को ध्यान में रखते हुए विशेष पैकेज की घोषणा...
+                  </p>
+                  <p class="news-meta">
+                    <span>प्रकाशित: 28 नवम्बर 2025</span> ·
+                    <span class="time">03:10 PM</span>
+                  </p>
+                </div>
+              </article>
+            </a>
+          </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="info-section">
+          <h2>हमारे बारे में</h2>
+          <p>
+            <strong>सत्यजय टाइम्स</strong> फरीदाबाद और आसपास के क्षेत्रों के साथ-साथ प्रदेश,
+            राष्ट्रीय और अंतरराष्ट्रीय मुद्दों पर संतुलित एवं विश्वसनीय खबरें देने के लिए
+            प्रतिबद्ध हिंदी दैनिक समाचार पत्र है।
+          </p>
+          <p class="info-label">
+            उद्देश्य: सही समय पर, सही जानकारी, सरल और साफ भाषा में आपके तक पहुंचाना।
+          </p>
+          <ul>
+            <li>स्थानीय मुद्दों को प्राथमिकता</li>
+            <li>खेल, मनोरंजन, शिक्षा, रोजगार जैसे सभी सेक्टर की कवरेज</li>
+            <li>फैक्ट्स पर आधारित रिपोर्टिंग और ग्राउंड रिपोर्ट</li>
+          </ul>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="info-section">
+          <h2>संपर्क करें</h2>
+          <p>अपने सुझाव, खबरें या विज्ञापन संबंधी जानकारी के लिए हमसे संपर्क करें।</p>
+          <p class="info-label">(यहाँ आप अपना मोबाइल नंबर, WhatsApp, और ईमेल आईडी डाल सकते हैं)</p>
+          <ul>
+            <li>ईमेल: <strong>contact@satyajaytimes.com</strong> (उदाहरण)</li>
+            <li>फोन: <strong>+91-XXXXXXXXXX</strong> (उदाहरण)</li>
+            <li>कार्यालय: फरीदाबाद, हरियाणा</li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-card">
+          <div class="footer-left">
+            <h3>हमें फॉलो करें</h3>
+            <p>सोशल मीडिया पर सत्यजय टाइम्स से जुड़े रहें और तुरंत अपडेट पाएं।</p>
+          </div>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          &copy; <span id="year-now"></span> सत्यजय टाइम्स · सर्वाधिकार सुरक्षित।
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- TODAY'S NEWSPAPER POPUP (PDF VIEW) -->
+  <div class="popup-overlay" id="today-popup">
+    <div class="popup-card">
+      <button class="popup-close-x" id="popup-close-x">&times;</button>
+      <h2>आज का अख़बार (PDF)</h2>
+
+      <!-- FIXED: proper img tag -->
+      <alt="आज के अख़बार का प्रीव्यू" class="pdf-thumb" />
+
+      <iframe
+        src="today.pdf"
+        class="pdf-frame"
+        title="आज का e-paper PDF"
+      ></iframe>
+
+      <p class="pdf-note">
+        अगर ऊपर PDF नहीं दिख रहा है तो नीचे दिए गए बटन पर क्लिक करके नई टैब में खोलें।
+      </p>
+
+      <div class="popup-actions">
+        <a href="today.pdf" target="_blank" class="btn-primary">ई-पेपर नई टैब में खोलें</a>
+        <button class="btn-secondary" id="close-popup">आज के लिए बंद करें</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

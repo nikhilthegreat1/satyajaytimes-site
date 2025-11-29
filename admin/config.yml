@@ -1,0 +1,79 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "Faridabad"
+    label: "फरीदाबाद"
+    folder: "content/Faridabad"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "शीर्षक", name: "title", widget: "string" }
+      - { label: "समय और तारीख", name: "date", widget: "datetime", default: "now" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "सारांश", name: "summary", widget: "text" }
+      - { label: "पूरा लेख", name: "content", widget: "markdown" }
+
+  - name: "Haryana"
+    label: "हरियाणा"
+    folder: "content/Haryana"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "शीर्षक", name: "title", widget: "string" }
+      - { label: "समय और तारीख", name: "date", widget: "datetime", default: "now" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "सारांश", name: "summary", widget: "text" }
+      - { label: "पूरा लेख", name: "content", widget: "markdown" }
+
+  - name: "Cricket"
+    label: "क्रिकेट"
+    folder: "content/Cricket"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "शीर्षक", name: "title", widget: "string" }
+      - { label: "समय और तारीख", name: "date", widget: "datetime", default: "now" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "सारांश", name: "summary", widget: "text" }
+      - { label: "पूरा लेख", name: "body", widget: "markdown" }
+
+  - name: "Entertainment"
+    label: "मनोरंजन"
+    folder: "content/Entertainment"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "शीर्षक", name: "title", widget: "string" }
+      - { label: "समय और तारीख", name: "date", widget: "datetime", default: "now" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "सारांश", name: "summary", widget: "text" }
+      - { label: "पूरा लेख", name: "body", widget: "markdown" }
+
+  - name: "National"
+    label: "राष्ट्रीय"
+    folder: "content/National"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "शीर्षक", name: "title", widget: "string" }
+      - { label: "समय और तारीख", name: "date", widget: "datetime", default: "now" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "सारांश", name: "summary", widget: "text" }
+      - { label: "पूरा लेख", name: "body", widget: "markdown" }
+
+  - name: "International"
+    label: "अंतरराष्ट्रीय"
+    folder: "content/International"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "शीर्षक", name: "title", widget: "string" }
+      - { label: "समय और तारीख", name: "date", widget: "datetime", default: "now" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "सारांश", name: "summary", widget: "text" }
+      - { label: "पूरा लेख", name: "body", widget: "markdown" }
