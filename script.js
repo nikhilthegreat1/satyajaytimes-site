@@ -5,6 +5,16 @@ const LON = 77.3178;  // Faridabad longitude
 // For now leave blank, later you will add keys
 const OPENWEATHER_API_KEY = "YOUR_OPENWEATHER_KEY_HERE";
 const AQI_API_TOKEN = "YOUR_AQICN_TOKEN_HERE";
+// Load JSON file to display news data dynamically
+fetch("news-data.json")
+  .then(response => response.json())
+  .then(data => {
+    console.log("✅ JSON connected successfully!", data);
+    
+    // You will handle automatic news population section later here
+  })
+  .catch(error => console.log("❌ JSON connection error:", error));
+
 
 // ---- DATE & TIME ----
 function updateDateTime() {
